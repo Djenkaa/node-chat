@@ -1,6 +1,7 @@
 const path = require('path');
 const http = require('http');
 const moment = require('moment');
+const {isString} = require('./utils/validation.js');
 const express = require('express');
 const socketIO = require('socket.io');
 const publicPath = path.join(__dirname, '../public');
@@ -14,10 +15,14 @@ app.use(express.static(publicPath));
 io.on("connect", function (socket) {
     console.log("New user connected !");
 
-     socket.broadcast.emit("messages", {
+     socket.emit("messages", {
          name: "Admin",
-         text: "Hello to everyone !"
-     })
+         text: "Hello to everyone !",
+    
+     });
+     socket.on("join", function(params){
+        
+     });
 
     socket.on("newMess", function (mess) {
         console.log(`New message ${mess}`);

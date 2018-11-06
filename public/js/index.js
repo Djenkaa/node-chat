@@ -1,32 +1,13 @@
-var socket = io();
-        socket.on("connect", function () {
-            console.log("Connected to server");
-        });
+$("#joinRoom").validate({
+    rules: {
+        username: {
+            required: true,
+            
+        },
+        chat: {
+            required: true,
+           
+        }
 
-        socket.on("disconnect", function(){
-            console.log("Disconnect from server");
-        });
-        // SEND MESSAGES TO SERVER
-        $('#btnSend').on("click", function(e){
-            e.preventDefault();
-        var input = $("#exampleInputEmail1");
-        console.log(input);
-       socket.emit("newMess",{
-            name:"Mihajlo",
-            text:input.val(),
-            timeStamp: Date.now()
-       });
-       input.val("");
-     
-    });
-    // RECEIVE MESSAGES FROM SERVER
-    socket.on("messages",function(m){
-        var template = $('#chatModel').html();
-        var html = Mustache.render(template,{
-            name:m.name,
-            text:m.text,
-            timeStamp: m.timeStamp
-        });
-        $('#mess').append(html);
-    });
-   
+    }
+});

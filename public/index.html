@@ -7,66 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Node chat</title>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="row" id="chatWindow">
+        <div class="row" id="joinPage">
             <div class="col-md-6 offset-md-3">
 
-                <div class="card text-white bg-secondary mb-3">
-                    <div class="card-header">Chat</div>
-                    <div class="card-body">
-                        <ul id="mess">
-                          
-                        </ul>
-                        <!-- <h3>Name <span id="timeSendMessage">timeStamp</span></h3>
-                        <p style="font-size:18px;">some text</p> -->
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" 
-                                    placeholder="Type text">
-                                    <button id="btnSend" class="btn btn-dark">Send</button>
+                <div class="card-group">
+                    <div class="card">
+                        <img class="card-img-top" src="https://goo.gl/nYjvYA" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Live Chat</h5>
+                            <form id="joinRoom" action="chat.html">
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control" id="username" placeholder="Type username"><br>
+                                    <input type="text" name="chat" class="form-control" id="chatroom" placeholder="Type chat room"><br>
+                                    <button id="btnJoin" class="btn btn-secondary">Send</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    </form>
+
                 </div>
             </div>
-
         </div>
-
-    </div>
-
-    </div>
-    <script id="chatModel" type="text/template">
-        <li id="message">
-       <h3> {{name}} <span id = "timeSendMessage" > {{timeStamp}}</span></h3 >
-            <p style="font-size:18px;">{{text}}</p> 
-       </li>
-    </script>
-
-
-
-
-    <!-- <form id="chat">
-        <input type="text" name="message" placeholder="type message">
-        <button id="btnSend">Send</button>
-
-
-    </form>
-    <ul id="chatMessage">
-
-
-    </ul> -->
-
-
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="js/libs/jquery-3.3.1.min.js"></script>
-    <script src="js/libs/mustache.js"></script>
-    <script src="js/index.js"></script>
+       
+        <script src="js/libs/jquery-3.3.1.min.js"></script>
+         <script src="js/libs/jquery.validate.js"></script>
+        <script src="js/index.js"></script>
+        
 </body>
 
 </html>
